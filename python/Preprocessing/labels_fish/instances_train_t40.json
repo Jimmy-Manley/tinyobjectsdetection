@@ -1,0 +1,22 @@
+{
+  "images": [],
+  "annotations": [],
+  "categories": [
+    {
+      "id": 0,
+      "name": "fly"
+    },
+    {
+      "id": 1,
+      "name": "fish"
+    },
+    {
+      "id": 2,
+      "name": "honeybee"
+    },
+    {
+      "id": 3,
+      "name": "seagull"
+    }
+  ]
+}
