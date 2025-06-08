@@ -1,0 +1,5 @@
+train: /content/drive/MyDrive/small_object_detection/threshold_labels/t0/folds/fold0/images/train
+val: /content/drive/MyDrive/small_object_detection/threshold_labels/t0/folds/fold0/images/val
+
+nc: 4
+names: ["fly", "fish", "honeybee", "seagull"]

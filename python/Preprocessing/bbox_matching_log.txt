@@ -1,0 +1,50 @@
+[OK] fly094.jpg
+[COUNT] fly079.jpg: .mat=115 vs .txt=114
+[OK] fly087.jpg
+[COUNT] fly092.jpg: .mat=102 vs .txt=101
+[COUNT] fly054.jpg: .mat=13 vs .txt=11
+[COUNT] fly063.jpg: .mat=17 vs .txt=16
+[MISMATCH] fly071.jpg: 3 box mismatches
+[OK] fly060.jpg
+[MISMATCH] fly059.jpg: 2 box mismatches
+[MISMATCH] fly098.jpg: 1 box mismatches
+[MISMATCH] fly075.jpg: 1 box mismatches
+[COUNT] fly090.jpg: .mat=114 vs .txt=113
+[MISMATCH] fly086.jpg: 1 box mismatches
+[MISMATCH] fly082.jpg: 3 box mismatches
+[MISMATCH] fly085.jpg: 3 box mismatches
+[MISMATCH] fly076.jpg: 2 box mismatches
+[MISMATCH] fly088.jpg: 1 box mismatches
+[MISMATCH] fly100.jpg: 2 box mismatches
+[MISMATCH] fly089.jpg: 2 box mismatches
+[MISMATCH] fly083.jpg: 2 box mismatches
+[COUNT] fly096.jpg: .mat=87 vs .txt=86
+[MISMATCH] fly093.jpg: 2 box mismatches
+[MISMATCH] fly058.jpg: 2 box mismatches
+[MISMATCH] fly062.jpg: 1 box mismatches
+[MISMATCH] fly091.jpg: 1 box mismatches
+[COUNT] fly055.jpg: .mat=20 vs .txt=18
+[MISMATCH] fly051.jpg: 1 box mismatches
+[MISMATCH] fly070.jpg: 2 box mismatches
+[MISMATCH] fly056.jpg: 1 box mismatches
+[MISMATCH] fly052.jpg: 1 box mismatches
+[OK] fly061.jpg
+[MISMATCH] fly057.jpg: 2 box mismatches
+[COUNT] fly072.jpg: .mat=93 vs .txt=89
+[COUNT] fly067.jpg: .mat=31 vs .txt=29
+[COUNT] fly069.jpg: .mat=64 vs .txt=63
+[COUNT] fly078.jpg: .mat=119 vs .txt=117
+[COUNT] fly080.jpg: .mat=125 vs .txt=124
+[COUNT] fly097.jpg: .mat=74 vs .txt=72
+[MISMATCH] fly073.jpg: 2 box mismatches
+[MISMATCH] fly095.jpg: 1 box mismatches
+[MISMATCH] fly074.jpg: 1 box mismatches
+[MISMATCH] fly053.jpg: 2 box mismatches
+[COUNT] fly077.jpg: .mat=108 vs .txt=107
+[MISMATCH] fly068.jpg: 4 box mismatches
+[COUNT] fly084.jpg: .mat=128 vs .txt=127
+[MISMATCH] fly064.jpg: 3 box mismatches
+[OK] fly065.jpg
+[MISMATCH] fly081.jpg: 1 box mismatches
+[MISMATCH] fly099.jpg: 1 box mismatches
+[MISMATCH] fly066.jpg: 2 box mismatches

@@ -1,0 +1,2 @@
+[COUNT] seagull002.jpg: .mat=762 vs .txt=758
+[COUNT] seagull003.jpg: .mat=971 vs .txt=962

@@ -1,0 +1,6 @@
+nc: 4
+names: ['fish', 'fly', 'honeybee', 'seagull']
+
+train: /content/drive/MyDrive/small_object_detection/original/folds/fold0/images/train
+val:  /content/drive/MyDrive/small_object_detection/original/folds/fold0/images/val
+

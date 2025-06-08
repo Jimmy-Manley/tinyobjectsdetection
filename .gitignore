@@ -1,0 +1,24 @@
+# Ignore all image and large output folders
+YOLOv8_first_model/runs/
+YOLOv8_first_model/datasets/
+YOLOv8_first_model/images/
+YOLOv8_first_model/labels/
+YOLOv8_first_model/*.pt
+YOLOv8_first_model/**/*.pt
+
+# Ignore dataset-related content
+python/Preprocessing/threshold_labels/
+python/Preprocessing/labels_all_*/
+python/Preprocessing/**/images/
+python/Preprocessing/**/labels/
+
+# Ignore any temporary files
+*.log
+*.csv
+*.zip
+*.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.jpg
+*.png
+.DS_Store

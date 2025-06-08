@@ -1,0 +1,135 @@
+import os
+import csv
+import scipy.io
+from PIL import Image
+import re
+
+
+# Configuration per category
+datasets = {
+    "fly": {
+        "annotations": "/home/jman/Documents/PROYECTO/Detección_particulas/Datasets/Kaggle/archive/Small Object dataset/train/fly/gt-bbox/", 
+        "images": "/home/jman/Documents/PROYECTO/Detección_particulas/Datasets/Kaggle/archive/Small Object dataset/train/fly/img/",
+        "output_base": "labels_fly"
+    },
+    "honeybee": {
+        "annotations": "/home/jman/Documents/PROYECTO/Detección_particulas/Datasets/Kaggle/archive/Small Object dataset/train/honeybee/gt-bbox/", 
+        "images": "/home/jman/Documents/PROYECTO/Detección_particulas/Datasets/Kaggle/archive/Small Object dataset/train/honeybee/img/",        
+        "output_base": "labels_honeybee"
+    },
+    "seagull": {
+        "annotations": "/home/jman/Documents/PROYECTO/Detección_particulas/Datasets/Kaggle/archive/Small Object dataset/train/seagull/gt-bbox/", 
+        "images": "/home/jman/Documents/PROYECTO/Detección_particulas/Datasets/Kaggle/archive/Small Object dataset/train/seagull/img/",      
+        "output_base": "labels_seagull"
+    },
+    "fish": {
+        "annotations": "/home/jman/Documents/PROYECTO/Detección_particulas/Datasets/Kaggle/archive/Small Object dataset/train/fish/gt-bbox/", 
+        "images": "/home/jman/Documents/PROYECTO/Detección_particulas/Datasets/Kaggle/archive/Small Object dataset/train/fish/img/",   
+        "output_base": "labels_fish"
+    },
+}
+
+
+visible_thresholds = [0.1, 0.2, 0.3, 0.4, 0.5]
+log_csv = "threshold_sweep_summary.csv"
+
+results = []
+
+
+def extract_id(filename):
+    match = re.search(r'(\d+)', filename)
+    return match.group(1) if match else None
+
+
+for threshold in visible_thresholds:
+    for name, paths in datasets.items():
+        ann_folder = paths["annotations"]
+        img_folder = paths["images"]
+        out_folder = f"{paths['output_base']}_t{int(threshold*100)}"
+        os.makedirs(out_folder, exist_ok=True)
+
+        clipped_count = 0
+        skipped_invalid_count = 0
+        converted_count = 0
+
+        for mat_file in os.listdir(ann_folder):
+            if not mat_file.endswith(".mat"):
+                continue
+
+            file_id = extract_id(mat_file)
+            if not file_id:
+                continue
+
+            mat_path = os.path.join(ann_folder, mat_file)
+            matching_imgs = [img for img in os.listdir(img_folder) if img.endswith(f"{file_id}.jpg")]
+            if not matching_imgs:
+                continue
+
+            img_file = matching_imgs[0]
+            img_path = os.path.join(img_folder, img_file)
+
+            try:
+                image = Image.open(img_path)
+                width, height = image.size
+            except:
+                continue
+
+            mat = scipy.io.loadmat(mat_path)
+            if "bbox_all" not in mat:
+                continue
+
+            bbox_all = mat["bbox_all"]
+            yolo_annotations = []
+
+            for box in bbox_all:
+                x, y, w, h = box
+                x1 = max(0, x)
+                y1 = max(0, y)
+                x2 = min(x + w, width)
+                y2 = min(y + h, height)
+                new_w = x2 - x1
+                new_h = y2 - y1
+
+                if new_w <= 0 or new_h <= 0:
+                    skipped_invalid_count += 1
+                    continue
+
+                visible_area = new_w * new_h
+                original_area = w * h
+                if visible_area / original_area < threshold:
+                    skipped_invalid_count += 1
+                    continue
+
+                if w != new_w or h != new_h:
+                    clipped_count += 1
+
+                x_center = (x1 + new_w / 2) / width
+                y_center = (y1 + new_h / 2) / height
+                w_norm = new_w / width
+                h_norm = new_h / height
+                yolo_annotations.append(f"0 {x_center:.6f} {y_center:.6f} {w_norm:.6f} {h_norm:.6f}")
+
+            if yolo_annotations:
+                base_name = os.path.splitext(img_file)[0]
+                out_path = os.path.join(out_folder, base_name + ".txt")
+                with open(out_path, "w") as f:
+                    f.write("\n".join(yolo_annotations))
+                converted_count += 1
+
+        results.append({
+            "dataset": name,
+            "threshold": threshold,
+            "converted": converted_count,
+            "clipped": clipped_count,
+            "skipped": skipped_invalid_count
+        })
+
+# Write CSV summary
+with open(log_csv, "w", newline="") as csvfile:
+    fieldnames = ["dataset", "threshold", "converted", "clipped", "skipped"]
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    for row in results:
+        writer.writerow(row)
+
+print(f"✅ Sweep complete. Summary saved to {log_csv}")
