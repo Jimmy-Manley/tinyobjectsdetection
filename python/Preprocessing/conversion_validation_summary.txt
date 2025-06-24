@@ -1,0 +1,24 @@
+FLY [original] - IMGs: 50, ANNs: 3607 | ⚠️ fly original: fly001.jpg not in JSON — check if .mat matches correct folder.
+FLY [t10] - IMGs: 50, ANNs: 3607 | ⚠️ fly t10: fly001.jpg not in JSON — check if .mat matches correct folder.
+FLY [t20] - IMGs: 50, ANNs: 3607 | ⚠️ fly t20: fly001.jpg not in JSON — check if .mat matches correct folder.
+FLY [t30] - IMGs: 50, ANNs: 3607 | ⚠️ fly t30: fly001.jpg not in JSON — check if .mat matches correct folder.
+FLY [t40] - IMGs: 50, ANNs: 3607 | ⚠️ fly t40: fly001.jpg not in JSON — check if .mat matches correct folder.
+FLY [t50] - IMGs: 50, ANNs: 3607 | ⚠️ fly t50: fly001.jpg not in JSON — check if .mat matches correct folder.
+HONEYBEE [original] - IMGs: 50, ANNs: 1543 | ⚠️ honeybee original: honeybee001.jpg not in JSON — check if .mat matches correct folder.
+HONEYBEE [t10] - IMGs: 50, ANNs: 1543 | ⚠️ honeybee t10: honeybee001.jpg not in JSON — check if .mat matches correct folder.
+HONEYBEE [t20] - IMGs: 50, ANNs: 1543 | ⚠️ honeybee t20: honeybee001.jpg not in JSON — check if .mat matches correct folder.
+HONEYBEE [t30] - IMGs: 50, ANNs: 1543 | ⚠️ honeybee t30: honeybee001.jpg not in JSON — check if .mat matches correct folder.
+HONEYBEE [t40] - IMGs: 50, ANNs: 1543 | ⚠️ honeybee t40: honeybee001.jpg not in JSON — check if .mat matches correct folder.
+HONEYBEE [t50] - IMGs: 50, ANNs: 1543 | ⚠️ honeybee t50: honeybee001.jpg not in JSON — check if .mat matches correct folder.
+SEAGULL [original] - IMGs: 2, ANNs: 1733 | ⚠️ seagull original: seagull001.jpg not in JSON — check if .mat matches correct folder.
+SEAGULL [t10] - IMGs: 2, ANNs: 1733 | ⚠️ seagull t10: seagull001.jpg not in JSON — check if .mat matches correct folder.
+SEAGULL [t20] - IMGs: 2, ANNs: 1733 | ⚠️ seagull t20: seagull001.jpg not in JSON — check if .mat matches correct folder.
+SEAGULL [t30] - IMGs: 2, ANNs: 1733 | ⚠️ seagull t30: seagull001.jpg not in JSON — check if .mat matches correct folder.
+SEAGULL [t40] - IMGs: 2, ANNs: 1733 | ⚠️ seagull t40: seagull001.jpg not in JSON — check if .mat matches correct folder.
+SEAGULL [t50] - IMGs: 2, ANNs: 1733 | ⚠️ seagull t50: seagull001.jpg not in JSON — check if .mat matches correct folder.
+FISH [original] - IMGs: 65, ANNs: 3581 | fish original ✅ | JSON: 0 boxes, MAT: 0 boxes
+FISH [t10] - IMGs: 65, ANNs: 3581 | fish t10 ✅ | JSON: 0 boxes, MAT: 0 boxes
+FISH [t20] - IMGs: 65, ANNs: 3581 | fish t20 ✅ | JSON: 0 boxes, MAT: 0 boxes
+FISH [t30] - IMGs: 65, ANNs: 3581 | fish t30 ✅ | JSON: 0 boxes, MAT: 0 boxes
+FISH [t40] - IMGs: 65, ANNs: 3581 | fish t40 ✅ | JSON: 0 boxes, MAT: 0 boxes
+FISH [t50] - IMGs: 65, ANNs: 3581 | fish t50 ✅ | JSON: 0 boxes, MAT: 0 boxes
